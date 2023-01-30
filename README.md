@@ -14,7 +14,7 @@
 
 2023 年，仍然在转专业的路上。
 
-### Course Notes
+### Course Notes  [(Github Pages)](https://akisui.github.io/SDU-Software/)
 
 [计算机组织与结构](计算机组织与结构/note.html)
 
