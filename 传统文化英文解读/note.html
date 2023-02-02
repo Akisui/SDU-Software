@@ -1,0 +1,505 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.428571; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit; background-repeat: inherit; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; padding-bottom: 0px !important; }
+  .typora-export * { print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit; background-repeat: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+
+
+html {
+	font-size: 19px;
+}
+
+html, body {
+	margin: auto;
+	background: #fefefe;
+	-webkit-font-smoothing: antialiased;
+}
+body {
+	font-family: "Vollkorn", Palatino, Times;
+	color: #333;
+	line-height: 1.4;
+	text-align: justify;
+}
+
+#write {
+	max-width: 960px;
+	margin: 0 auto;
+	margin-bottom: 2em;
+	line-height: 1.53;
+	padding-top: 40px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1100px;
+	}
+}
+
+@media print {
+	html {
+		font-size: 13px;
+	}
+}
+
+/* Typography
+-------------------------------------------------------- */
+
+#write>h1:first-child,
+h1 {
+	margin-top: 1.6em;
+	font-weight: normal;
+}
+
+h1 {
+	font-size:3em;
+}
+
+h2 {
+	margin-top:2em;
+	font-weight: normal;
+}
+
+h3 {
+	font-weight: normal;
+	font-style: italic;
+	margin-top: 3em;
+}
+
+h1, 
+h2, 
+h3{
+	text-align: center;
+}
+
+h2:after{
+	border-bottom: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+    height: 1px;
+}
+
+h1+h2, h2+h3 {
+	margin-top: 0.83em;
+}
+
+p,
+.mathjax-block {
+	margin-top: 0;
+	-webkit-hypens: auto;
+	-moz-hypens: auto;
+	hyphens: auto;
+}
+ul {
+	list-style: square;
+	padding-left: 1.2em;
+}
+ol {
+	padding-left: 1.2em;
+}
+blockquote {
+	margin-left: 1em;
+	padding-left: 1em;
+	border-left: 1px solid #ddd;
+}
+code,
+pre {
+	font-family: "Consolas", "Menlo", "Monaco", monospace, serif;
+	font-size: .9em;
+	background: white;
+}
+.md-fences{
+	margin-left: 1em;
+	padding-left: 1em;
+	border: 1px solid #ddd;
+	padding-bottom: 8px;
+	padding-top: 6px;
+	margin-bottom: 1.5em;
+}
+
+a {
+	color: #2484c1;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a img {
+	border: none;
+}
+h1 a,
+h1 a:hover {
+	color: #333;
+	text-decoration: none;
+}
+hr {
+	color: #ddd;
+	height: 1px;
+	margin: 2em 0;
+	border-top: solid 1px #ddd;
+	border-bottom: none;
+	border-left: 0;
+	border-right: 0;
+}
+.ty-table-edit {
+	background: #ededed;
+    padding-top: 4px;
+}
+table {
+	margin-bottom: 1.333333rem
+}
+table th,
+table td {
+	padding: 8px;
+	line-height: 1.333333rem;
+	vertical-align: top;
+	border-top: 1px solid #ddd
+}
+table th {
+	font-weight: bold
+}
+table thead th {
+	vertical-align: bottom
+}
+table caption+thead tr:first-child th,
+table caption+thead tr:first-child td,
+table colgroup+thead tr:first-child th,
+table colgroup+thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td {
+	border-top: 0
+}
+table tbody+tbody {
+	border-top: 2px solid #ddd
+}
+
+.task-list{
+	padding:0;
+}
+
+.md-task-list-item {
+	padding-left: 1.6rem;
+}
+
+.md-task-list-item > input:before {
+	content: '\221A';
+	display: inline-block;
+	width: 1.33333333rem;
+  	height: 1.6rem;
+	vertical-align: middle;
+	text-align: center;
+	color: #ddd;
+	background-color: #fefefe;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before{
+	color: inherit;
+}
+.md-tag {
+	color: inherit;
+	font: inherit;
+}
+#write pre.md-meta-block {
+	min-height: 35px;
+	padding: 0.5em 1em;
+}
+#write pre.md-meta-block {
+	white-space: pre;
+	background: #f8f8f8;
+	border: 0px;
+	color: #999;
+	
+	width: 100vw;
+	max-width: calc(100% + 60px);
+	margin-left: -30px;
+	border-left: 30px #f8f8f8 solid;
+	border-right: 30px #f8f8f8 solid;
+
+	margin-bottom: 2em;
+	margin-top: -1.3333333333333rem;
+	padding-top: 26px;
+	padding-bottom: 10px;
+	line-height: 1.8em;
+	font-size: 0.9em;
+	font-size: 0.76em;
+	padding-left: 0;
+}
+.md-img-error.md-image>.md-meta{
+	vertical-align: bottom;
+}
+#write>h5.md-focus:before {
+	top: 2px;
+}
+
+.md-toc {
+	margin-top: 40px;
+}
+
+.md-toc-content {
+	padding-bottom: 20px;
+}
+
+.outline-expander:before {
+	color: inherit;
+	font-size: 14px;
+	top: auto;
+	content: "\f0da";
+	font-family: FontAwesome;
+}
+
+.outline-expander:hover:before,
+.outline-item-open>.outline-item>.outline-expander:before {
+  	content: "\f0d7";
+}
+
+/** source code mode */
+#typora-source {
+	font-family: Courier, monospace;
+    color: #6A6A6A;
+}
+
+.html-for-mac #typora-sidebar {
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property,
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+	color: #428bca;
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+	color: #777777;
+}
+
+.typora-node .file-list-item-parent-loc, 
+.typora-node .file-list-item-time, 
+.typora-node .file-list-item-summary {
+	font-family: arial, sans-serif;
+}
+
+.md-task-list-item>input {
+    margin-left: -1.3em;
+    margin-top: calc(1rem - 12px);
+}
+
+.md-mathjax-midline {
+	background: #fafafa;
+}
+
+.md-fences .code-tooltip {
+	bottom: -2em !important;
+}
+
+.dropdown-menu .divider {
+	border-color: #e5e5e5;
+}
+
+ @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
+</style><title>note</title>
+</head>
+<body class='typora-export typora-export-show-outline typora-export-collapse-outline'><div class='typora-export-content'>
+<div class="typora-export-sidebar"><div class="outline-content"><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#1&#9;chinese-catering-culture">1.<span>	</span>Chinese Catering Culture</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#the-eight-famous-cuisines">The Eight Famous Cuisines</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#2&#9;traditional-chinese-medicine">2.<span>	</span>Traditional Chinese Medicine</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#introduction-to-tcm">Introduction to TCM</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#5&#9;chinese-painting-and-calligraphy">5.<span>	</span>Chinese Painting and Calligraphy</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#chinese-landscape-painting">Chinese Landscape Painting</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#6&#9;the-chinese-language">6.<span>	</span>The Chinese Language</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#history-of-the-chinese-language">History of the Chinese Language</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#7&#9;heritage-and-antiques">7.<span>	</span>Heritage and Antiques</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#beijing-opera">Beijing Opera</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#9&#9;ancient-chinese-architecture">9.<span>	</span>Ancient Chinese Architecture</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#text-a&#9;the-great-wall">Text A<span>	</span>The Great Wall</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#translation">Translation</a></div><ul class="outline-children"></ul></li></ul></li></div></div><div id='write'  class=''><p>&nbsp;</p><h1 id='1\tchinese-catering-culture'><span>1.</span><span>	</span><span>Chinese Catering Culture</span></h1><h2 id='the-eight-famous-cuisines'><span>The Eight Famous Cuisines</span></h2><p>&nbsp;</p><h1 id='2\ttraditional-chinese-medicine'><span>2.</span><span>	</span><span>Traditional Chinese Medicine</span></h1><h2 id='introduction-to-tcm'><span>Introduction to TCM</span></h2><p>&nbsp;</p><h1 id='5\tchinese-painting-and-calligraphy'><span>5.</span><span>	</span><span>Chinese Painting and Calligraphy</span></h1><h2 id='chinese-landscape-painting'><span>Chinese Landscape Painting</span></h2><p>&nbsp;</p><h1 id='6\tthe-chinese-language'><span>6.</span><span>	</span><span>The Chinese Language</span></h1><h2 id='history-of-the-chinese-language'><span>History of the Chinese Language</span></h2><p>&nbsp;</p><h1 id='7\theritage-and-antiques'><span>7.</span><span>	</span><span>Heritage and Antiques</span></h1><h2 id='beijing-opera'><span>Beijing Opera</span></h2><p>&nbsp;</p><h1 id='9\tancient-chinese-architecture'><span>9.</span><span>	</span><span>Ancient Chinese Architecture</span></h1><h2 id='text-a\tthe-great-wall'><span>Text A</span><span>	</span><span>The Great Wall</span></h2><p>&nbsp;</p><p><span>The Great Wall, one of the greatest wonders of the world, was listed as a World Heritage by UNESCO in 1987. Just like a </span><strong><span>gigantic</span></strong><span> dragon, it winds up and down across deserts, grasslands, mountains and </span><strong><span>plateaus</span></strong><span>, stretching </span><strong><span>approximately</span></strong><span> 21196 kilometers from east to west of China. With a history of about 2700 years, some of the Great Wall sections are now in ruins or have disappeared. However, the Great Wall is still one of the most appealing attractions all around the world owing to its architectural </span><strong><span>grandeur</span></strong><span> and historical significance.</span></p><p><span>长城是世界上最伟大的奇迹之一，于1987年被联合国教科文组织列为世界文化遗产。它就像一条巨大的龙，在沙漠、草原、山脉和高原上蜿蜒起伏，从中国的东部到西部，绵延约21196公里。长城有大约2700年的历史，一些长城部分现在已经成为废墟或已经消失了。然而，由于长城的建筑宏伟和历史意义，它仍然是全世界最吸引人的景点之一。</span></p><p>&nbsp;</p><p><span>The Great Wall was continuously built from the 3rd century BC to the 17th century AD on the northern </span><strong><span>border</span></strong><span> of the country as the great </span><u><span>military defence project</span></u><span> of </span><strong><span>successive</span></strong><span> Chinese empires. It begins in the east at Shanhaiguan in Hebei province and ends at Jiayuguan in Gansu province to the west. Its main body consists of </span><u><span>walls, horse tracks, watch towers, and shelters on the wall,</span></u><span> and includes </span><strong><span>fortresses</span></strong><span> and passes along the Wall.</span></p><p><span>长城从公元前3世纪到公元17世纪，作为中国历代帝国的伟大军事防御工程，在我国北部边境不断修建。它东起河北省的山海关，西止于甘肃省的嘉峪关。其主体由城墙、马道、瞭望塔和城墙上的掩体组成，并包括长城沿线的堡垒和通道。</span></p><p>&nbsp;</p><p><span>The Great Wall reflects </span><strong><span>collision</span></strong><span> and exchanges between </span><strong><span>agricultural</span></strong><span> civilizations and </span><strong><span>nomadic</span></strong><span> civilizations in ancient China. It provides </span><u><span>significant physical evidence</span></u><span> of the </span><strong><span>far-sighted</span></strong><span> political </span><strong><span>strategic thinking</span></strong><span> and </span><strong><span>mighty</span></strong><span> military and national defence forces of central empires in ancient China, and is an outstanding example of the </span><strong><span>superb</span></strong><span> military architecture, technology and art of ancient China. It </span><strong><span>embodies</span></strong><span> </span><strong><span>unparalleled</span></strong><span> significance as the national symbol for safeguarding the security of the country and its people.</span></p><p><span>长城反映了中国古代农业文明和游牧文明之间的碰撞和交流。它为中国古代中央帝国高瞻远瞩的政治战略思想和强大的军事和国防力量提供了重要的实物证据，是中国古代高超的军事建筑、技术和艺术的杰出范例。它作为维护国家和人民安全的国家象征，体现了无可比拟的意义。</span></p><p>&nbsp;</p><p><span>The Great Wall of the Ming is, not only because of the </span><strong><span>ambitious</span></strong><span> character of the undertaking but also the perfection of its </span><strong><span>construction</span></strong><span>, an absolute </span><strong><span>masterpiece</span></strong><span>. Being the only work built by human hands on this planet that can be seen from the moon, the Wall </span><strong><span>constitutes</span></strong><span>, </span><u><span>on the vast scale of a continent</span></u><span>, a perfect example of architecture </span><strong><span>integrated into</span></strong><span> the landscape.</span></p><p><span>明长城是一个绝对的杰作，这不仅是因为其雄心勃勃的特点，而且还因为其建设的完美性。作为人类在这个星球上唯一可以从月球上看到的作品，长城在一个大陆的广阔范围内构成了一个建筑与景观相结合的完美范例。</span></p><p>&nbsp;</p><p><span>During the Spring and Autumn Period, the Chinese </span><strong><span>imposed</span></strong><span> their models of construction and organization of space in building the defence works along the northern </span><strong><span>frontier</span></strong><span>. The spread of Sinicism was </span><strong><span>accentuated</span></strong><span> by the population transfers </span><strong><span>necessitated</span></strong><span> by the Great Wall.</span></p><p><span>在春秋时期，中国人在建造北方边境的防御工程时强加了他们的建筑和空间组织模式。长城所需的人口转移加剧了中华文化的传播。</span></p><p>&nbsp;</p><p><span>That the Great Wall bears </span><strong><span>exceptional</span></strong><span> </span><strong><span>testimony</span></strong><span> to the civilizations of ancient China is </span><strong><span>illustrated</span></strong><span> as much by the </span><strong><span>rammed-earth</span></strong><span> sections of </span><strong><span>fortifications</span></strong><span> dating from the Western Han that are </span><strong><span>conserved</span></strong><span> in Gansu province as by the </span><strong><span>admirable</span></strong><span> and universally </span><strong><span>acclaimed</span></strong><span> </span><strong><span>masonry</span></strong><span> of the Ming period.</span></p><p><span>长城是中国古代文明的特殊见证，这一点从甘肃省保存的西汉时期的夯土工事和明朝时期令人钦佩、广受赞誉的砖石工程中得到了说明。</span></p><p>&nbsp;</p><p><span>This complex and </span><strong><span>diachronic</span></strong><span> cultural property is an outstanding and unique example of a military architectural ensemble which </span><u><span>served a single strategic purpose</span></u><span> for 2000 years, but whose construction history illustrates successive </span><strong><span>advances</span></strong><span> in defence techniques and </span><strong><span>adaptation</span></strong><span> to changing political </span><strong><span>contexts</span></strong><span>.</span></p><p><span>这一复杂的、历时性的文化财产是一个杰出的、独特的军事建筑群的例子，它在2000年中只为一个战略目的服务，但其建造历史说明了防御技术的连续进步和对不断变化的政治环境的适应。</span></p><p>&nbsp;</p><p><span>The Great Wall has an </span><strong><span>incomparable</span></strong><span> </span><strong><span>symbolic</span></strong><span> significance in the history of China. Its purpose was to protect China from outside </span><strong><span>aggression</span></strong><span>, but also to preserve its culture from the customs of foreign </span><strong><span>barbarians</span></strong><span>. Because its construction implied suffering, it is one of the essential references in Chinese literature, being found in works like the “Soldier&#39;s Ballad” of Tch’en Lin or the poems of Tu Fu and the popular novels of the Ming period.</span></p><p><span>长城在中国历史上具有无可比拟的象征意义。它的目的是保护中国不受外来侵略，同时也是为了保护中国文化不受外国野蛮人的习俗影响。因为它的建造意味着苦难，所以它是中国文学中的重要参考文献之一，在陈琳的《士兵谣》或杜甫的诗和明代的通俗小说等作品中都可以找到。</span></p><p>&nbsp;</p><p><span>The Great Wall </span><strong><span>integrally</span></strong><span> preserves all the material and spiritual elements and historical and cultural information that carry its outstanding universal value. The complete route of the Great Wall over 20,000 kilometers, as well as elements constructed in different historical periods which </span><strong><span>constitute</span></strong><span> the complicated defence system of the property, including walls, </span><strong><span>fortresses</span></strong><span>, passes and </span><strong><span>beacon</span></strong><span> towers, have been preserved to the present day. The building methods of the Great Wall in different times and places have been integrally maintained, while the </span><strong><span>unparalleled</span></strong><span> national and cultural significance of the Great Wall to China is still recognized today. The visual integrity of the Wall at Badaling has been impacted negatively by construction of tourist facilities and a cable car.</span></p><p><span>长城完整地保留了所有的物质和精神元素以及历史和文化信息，具有突出的普遍价值。2万多公里的长城完整路线，以及在不同历史时期建造的构成长城复杂防御体系的元素，包括城墙、堡垒、关隘和烽火台，都被保存到了今天。长城在不同时间和地点的建造方法被完整地保留下来，而长城对中国无与伦比的民族和文化意义至今仍被认可。八达岭长城的视觉完整性受到了旅游设施和缆车建设的不利影响。</span></p><p>&nbsp;</p><p><span>The existing elements of the Great Wall retain their original location, material, form, technology and structure. The original </span><strong><span>layout</span></strong><span> and </span><strong><span>composition</span></strong><span> of various </span><strong><span>constituents</span></strong><span> of the Great Wall defence system are maintained, while the perfect integration of the Great Wall with the </span><strong><span>topography</span></strong><span>, to form a </span><strong><span>meandering</span></strong><span> landscape feature, and the military concepts it </span><strong><span>embodies</span></strong><span> have all been </span><strong><span>authentically</span></strong><span> preserved. The </span><strong><span>authenticity</span></strong><span> of the </span><u><span>setting</span></u><span> of the Great Wall is </span><strong><span>vulnerable</span></strong><span> to construction of </span><strong><span>inappropriate</span></strong><span> tourism facilities.</span></p><p><span>长城的现有元素保留了它们原来的位置、材料、形式、技术和结构。长城防御系统各组成部分的原始布局和构成得到了保持，而长城与地形的完美结合，形成蜿蜒的景观特征，以及它所体现的军事理念都得到了真实的保留。长城环境的真实性容易受到不适当的旅游设施建设的影响。</span></p><p>&nbsp;</p><p><span>The various components of the Great Wall have all been listed as state or </span><strong><span>provincial</span></strong><span> </span><u><span>priority</span></u><span> protected sites under the Law of the People’s Republic of China on the Protection of Cultural </span><strong><span>Relics</span></strong><span>. The Regulations on the Protection of the Great Wall </span><strong><span>promulgated</span></strong><span> in 2006 is the specific legal document for the </span><strong><span>conservation</span></strong><span> and management of the Great Wall. The series of Great Wall Conservation Plans, which is being constantly extended and improved and covers various </span><u><span>levels</span></u><span> from </span><u><span>master plan to provincial plans and specific plans</span></u><span>, is an important </span><strong><span>guarantee</span></strong><span> of the </span><strong><span>comprehensive</span></strong><span> conservation and management of the Great Wall. China’s national administration on cultural </span><strong><span>heritage</span></strong><span>, and provincial cultural heritage administrations where sections of the Great Wall are located, are responsible for guiding the local governments on the </span><strong><span>implementation</span></strong><span> of conservation and management measures for the Great Wall.</span></p><p><span>根据《中华人民共和国文物保护法》，长城的各个组成部分都已被列为国家或省级重点保护文物点。2006年颁布的《长城保护条例》是对长城进行保护和管理的具体法律文件。一系列的长城保护规划不断延伸和完善，涵盖了从总体规划到省级规划和具体规划的各个层面，是对长城进行全面保护和管理的重要保障。中国国家文物局和长城所在的省级文物行政部门负责指导地方政府实施长城保护和管理措施。</span></p><p>&nbsp;</p><p><span>The Outstanding Universal Value of the Great Wall and </span><u><span>all its attributes</span></u><span> must be protected as a whole, so as to </span><strong><span>fulfill</span></strong><span> </span><strong><span>authentic</span></strong><span>, </span><strong><span>integral</span></strong><span> and </span><strong><span>permanent</span></strong><span> preservation of the property. To this end, considering the characteristics of the Great Wall, including its massive scale, trans-provincial distribution and complicated conditions for its protection and conservation, management procedures and regulations, conservation </span><strong><span>interventions</span></strong><span> for the original </span><strong><span>fabric</span></strong><span> and setting, and tourism management shall be more systematic, scientific, classified, and </span><strong><span>prioritized</span></strong><span>. An efficient comprehensive management system, as well as specific conservation measures for the original fabric and setting will be </span><strong><span>established</span></strong><span>, while a </span><strong><span>harmonious</span></strong><span> relationship featuring </span><u><strong><span>sustainable</span></strong><span> development between heritage protection and social economy and culture</span></u><span> can be formed. Meanwhile, the study and </span><strong><span>dissemination</span></strong><span> of the rich </span><strong><span>connotation</span></strong><span> of the property’s Outstanding Universal Value shall be </span><strong><span>enhanced</span></strong><span>, so as to </span><strong><span>fully</span></strong><span> and </span><strong><span>sustainably</span></strong><span> realize the social and cultural benefits of the Great Wall.</span></p><p><span>长城的突出普遍价值及其所有属性必须作为一个整体加以保护，以实现其真实、完整和永久的保护。为此，考虑到长城规模宏大、跨省分布、保护条件复杂等特点，管理程序和规章制度、原始结构和环境的保护措施、旅游管理等应更加系统、科学、分类和优先。建立高效的综合管理体制，以及对原始结构和环境的具体保护措施，形成文物保护与社会经济、文化可持续发展的和谐关系。同时，加强对长城遗产丰富内涵的研究和宣传，充分、持续地实现长城的社会和文化效益。</span></p><p>&nbsp;</p><h2 id='translation'><span>Translation</span></h2><p>&nbsp;</p><p><span>The Great Wall is an ancient Chinese military defense project. It is a tall, </span><strong><span>sturdy</span></strong><span>, continuous wall used to limit the movement of </span><strong><span>enemy horsemen</span></strong><span>. The Great Wall is not just an </span><strong><span>isolated</span></strong><span> wall, but a complete defense engineering system composed of </span><u><span>walls, enemy towers, customs cities, pier fortresses, barracks, guard towers, town beacon towers</span></u><span> and other kinds of </span><strong><span>fortifications</span></strong><span>. This defensive engineering system is commanded and controlled by the military command system </span><u><span>at all levels</span></u><span>.</span></p><p><span>长城是中国古代的军事防御工程，是一道高大、坚固而连绵不断的长垣，用以限隔敌骑的行动。长城并不只是一道单独的城墙，而是由城墙、敌楼、关城、墩堡、营城、卫所、镇城烽火台等多种防御工事所组成的一个完整的防御工程体系。这一防御工程体系，由各级军事指挥系统层层指挥、节节控制。</span></p><p>&nbsp;</p><p><span>The Great Wall is the longest and most </span><strong><span>massive</span></strong><span> ancient defense project in China and the world, and has been under continuous </span><strong><span>construction</span></strong><span> for more than 2,000 years since the Western Zhou Dynasty. The Great Wall </span><u><span>spreads over a vast area of</span></u><span> northern and central China, with a total length of more than 50,000 kilometers.</span></p><p><span>长城是中国也是世界上修建时间最长、工程量最大的一项古代防御工程，自西周时期开始， 延续不断修筑了 2000 多年。长城分布于中国北部和中部的广大土地上，总计长度达 5 万多千米。</span></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div></div>
+
+<script>(function (){var t=document.body.parentElement,e=[],n=null,i=document.body.classList.contains("typora-export-collapse-outline"),r=function(t,e,n){document.addEventListener(t,function(t){if(!t.defaultPrevented)for(var i=t.target;i&&i!=this;i=i.parentNode)if(i.matches(e)){!1===n.call(i,t)&&(t.preventDefault(),t.stopPropagation());break}},!1)};function o(){return t.scrollTop}r("click",".outline-expander",function(t){var e=this.closest(".outline-item-wrapper").classList;return e.contains("outline-item-open")?e.remove("outline-item-open"):e.add("outline-item-open"),c(),!1}),r("click",".outline-item",function(t){var e=this.querySelector(".outline-label");if(location.hash="#"+e.getAttribute("href"),i){var n=this.closest(".outline-item-wrapper").classList;n.contains("outline-item-open")||n.add("outline-item-open"),l(),n.add("outline-item-active")}});var a,s,u=function(){var t=o();n=null;for(var i=0;i<e.length&&e[i][1]-t<60;i++)n=e[i]},l=function(){document.querySelectorAll(".outline-item-active").forEach(t=>t.classList.remove("outline-item-active")),document.querySelectorAll(".outline-item-single.outline-item-open").forEach(t=>t.classList.remove("outline-item-open"))},c=function(){if(n){l();var t=document.querySelector('.outline-label[href="#'+(CSS.escape?CSS.escape(n[0]):n[0])+'"]');if(t)if(i){var e=t.closest(".outline-item-open>ul>.outline-item-wrapper");if(e)e.classList.add("outline-item-active");else{for(var r=(t=t.closest(".outline-item-wrapper")).parentElement.closest(".outline-item-wrapper");r;)r=(t=r).parentElement.closest(".outline-item-wrapper");t.classList.add("outline-item-active")}}else t.closest(".outline-item-wrapper").classList.add("outline-item-active")}};window.addEventListener("scroll",function(t){a&&clearTimeout(a),a=setTimeout(function(){u(),c()},300)});var f=function(){s=setTimeout(function(){!function(){e=[];var t=o();document.querySelector("#write").querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(n=>{var i=n.getAttribute("id");e.push([i,t+n.getBoundingClientRect().y])})}(),u(),c()},300)};window.addEventListener("resize",function(t){s&&clearTimeout(s),f()}),f()})();</script></body>
+</html>
