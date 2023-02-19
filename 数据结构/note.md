@@ -45,20 +45,6 @@ int calc(int n)
 
 ### 1.2	排序
 
-选择排序（取最大或最小皆可）
-
-<img src="https://www.runoob.com/wp-content/uploads/2019/03/selectionSort.gif" alt="img" style="zoom:67%;" />
-
-插入排序
-
-<img src="https://www.runoob.com/wp-content/uploads/2019/03/insertionSort.gif" alt="img" style="zoom:67%;" />
-
-冒泡排序
-
-<img src="https://www.runoob.com/wp-content/uploads/2019/03/bubbleSort.gif" alt="img" style="zoom:67%;" />
-
-
-
 **Q1:  序列 { 8，9，2，13，0，7，1，6，5 } ，请分别进行选择排序、插入排序、冒泡排序、快速排序（以 8 为轴），并给出第一轮及第二轮排序结束后各自的结果**
 
 - 选择排序
