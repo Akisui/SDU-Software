@@ -22,7 +22,7 @@
 
 
 
-仓库： [Repository](https://github.com/Akisui/SDU-Software)（里有一些只写了一半的笔记）
+仓库： [Repository](https://github.com/Akisui/SDU-Software)（里面有一些只写了一半的笔记）
 
 笔记主页： [Github Pages](https://akisui.github.io/SDU-Software/) 
 
