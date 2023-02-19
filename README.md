@@ -26,23 +26,21 @@
 
 笔记主页： [Github Pages](https://akisui.github.io/SDU-Software/) 
 
-注：在 README 里下面的链接无法正确跳转，所以请在 Github Pages 里点击～
-
 
 
 #### **二年级・第一学期**
 
 通识课
 
-[传统文化英文解读](传统文化英文解读/note.html)
+[传统文化英文解读](https://akisui.github.io/SDU-Software/传统文化英文解读/note.html)
 
 专业课
 
-[计算机组织与结构](计算机组织与结构/note.html)
+[计算机组织与结构](https://akisui.github.io/SDU-Software/计算机组织与结构/note.html)
 
-[概率统计](概率统计/note.html)
+[概率统计](https://akisui.github.io/SDU-Software/概率统计/note.html)
 
-[数据结构](数据结构/note.html)
+[数据结构](https://akisui.github.io/SDU-Software/数据结构/note.html)
 
 
 
