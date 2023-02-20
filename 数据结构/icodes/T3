@@ -1,0 +1,4 @@
+      Currency operator-(const Currency& x) const;
+      Currency operator%(float x) const;
+      Currency operator*(float x) const;
+      Currency operator/(float x) const;

@@ -1,0 +1,5 @@
+   if (theAmount < 0)
+      amount = (long) ((theAmount - 0.001) * 100);
+   else
+      amount = (long) ((theAmount + 0.001) * 100);
+            // 2 decimal digits only

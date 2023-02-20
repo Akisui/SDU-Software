@@ -1,0 +1,18 @@
+echo "计算a和b的最大公约数"
+echo "输入a"
+read a
+echo "输入b"
+read b
+
+echo
+echo "$a"和"$b"的最大公约数是
+
+c=1
+until [ "$c" -eq 0 ]
+do
+        c=$((a%b))
+        a=$b
+        b=$c
+done
+
+echo $a

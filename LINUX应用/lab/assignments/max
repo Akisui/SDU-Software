@@ -1,0 +1,23 @@
+echo "找出最大数和次大数"
+echo "输入数的个数"
+
+read n
+max1=-1
+max2=-1
+
+echo 依次输入"$n"个数，用换行隔开
+for((i=1;i<=n;i++))
+do
+	read x
+	if [ $x -gt $max1 ]
+	then
+		max2=$max1
+		max1=$x
+	elif [ $x -gt $max2 ]
+	then
+		max2=$x
+	fi
+done
+echo
+echo 最大数为"$max1"
+echo 最小数为"$max2"

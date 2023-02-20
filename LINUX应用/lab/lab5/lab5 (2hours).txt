@@ -1,0 +1,76 @@
+实验五：shell编程基础（2学时）
+
+
+实验要求：(交实验报告）
+
+1. 掌握引号的使用。
+2. 理解什么是位置变量参数和特定变量参数。
+3. 掌握简单的表达式赋值方法，包括expr命令和变量扩展$(())。
+4. 掌握test命令的用法，熟悉test命令的字符串操作符、整数操作符、文件操作符和逻辑操作符。
+5. 了解shell控制语句的基本用法。
+
+
+
+一.引号的使用
+1. 双引号和单引号的使用。依次输入下列命令：
+    (1) $string =“ hello world!”
+    (2)$echo “$string”
+    (3)$echo ‘$string’
+    比较(2)和(3)的结果，为什么不同？
+2. 反引号的使用。进入你的主目录，输入:
+    $echo “the current work directory is: `pwd`”
+    会显示什么结果？解释反引号的作用。
+
+二. shell编程
+
+3.位置变量参数和特定变量参数.验证讲义中Param脚本的运行结果。
+   (1)在你的主目录/home/student下建立目录bin,并进入到bin目录。
+    用vi编辑器编辑Param脚本，内容如下：
+    echo " script name: "
+    echo $0
+    echo "show arguments:"
+    echo $*
+    echo "my process id:"
+    echo $$
+    echo "Did my script go with any errors?"
+    echo $?
+   (2) 执行Param 脚本, 显示什么内容？
+    $Param hello world
+   (3)结合执行结果，解释脚本中$0,$*,$$,$?的意义.
+     
+4. 表达式。依次进行以下操作：
+    (1) 给变量i赋值为10，变量j赋值为5.
+    (2) 分别用算术扩展$(())和expr两种方式求表达式i*5-j的值。
+5.test命令。
+   (1)字符串操作符。依次输入以下命令,并解释执行结果。
+      $str1=abcd 
+      $str2="abcd  "
+      $test  "$str1"  =  "$str2" 
+      $echo $? 
+   (2)整数操作符。依次输入以下命令,并解释执行结果。
+      $str1=1234 
+      $str2=01234 
+      $[ "$str1" –eq "$str2" ] 
+      $echo $? 
+   (3)文件操作符。依次输入以下命令,并解释执行结果。
+      $touch aa
+      $ [ -w aa ]
+      $ test -w aa 
+      $ echo $?
+      $[ ! -d aa ]
+      $ echo $?
+      用ls -l命令进行查看，验证上述输出的正确性。
+   (4)逻辑操作符。利用（3）中的文件aa执行如下命令，并解释结果。
+      $[ -r aa -a -x aa ] 
+      $echo $?
+    
+6. shell控制语句. 编写一个脚本，要求如下：
+    (1)把用户名作为输入参数(位置变量参数),每隔60秒检查一次用户是否登陆,直至该用户登陆。
+    (2)如果执行脚本时输入的参数数目不为1，则输出"Incorrect number of arguments"提示信息，并退出执行脚本。
+    (3)该用户登陆后，显示"the user 用户名 has logged on"。其中用户名对应于用户执行时输入的参数信息。
+
+    提示：
+    (1) 用[ "$# " –ne 1 ] 测试输入参数个数是否为1
+    (2) 用 who|grep "^$user "> /dev/null 判断用户$user是否登陆
+    (3) 用 sleep 60 表示每隔60秒进行某项操作。 
+    

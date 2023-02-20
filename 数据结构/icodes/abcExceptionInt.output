@@ -1,0 +1,7 @@
+The parameters to abc were -1, -2, -3
+All are < 0
+The parameters to abc were 0, 0, 0
+All are = 0
+The parameters to abc were 1, 2, 0
+1
+No Exception

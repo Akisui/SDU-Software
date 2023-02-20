@@ -1,0 +1,223 @@
+实验三：vi编辑器的使用（2学时）
+
+实验要求：
+
+掌握vi编辑器的使用方法和常用的命令。
+
+
+实验内容：
+
+一. 使用vi文本编辑器
+
+
+1. 以某个帐号登入系统，确认是否在主目录里。在主目录里用vi文本编辑器创建一个名为vitest的文件。
+   可随意输入，尽量多输入以便能多分几屏显示。也可输入下面所示的内容。
+
+access arm  
+access time  
+adder  
+address  
+alphanumeric  
+analog computer  
+analyst  
+area  
+array  
+assembler  
+automation  
+band  
+batch processing  
+binary code  
+binary digit  
+bit  
+branch  
+brush  ：
+buffer storage  
+calculator  
+call instruction  
+card punch  
+card reader  
+cell  
+channel  
+character  
+check digit  
+circuit  
+to clear  
+clock  
+code  
+to code  
+coder  
+command  
+compiler  
+computer language  
+console  
+control unit  
+core storage,core store  
+counter  
+cybernetics  
+cycle  
+data  
+data processing  
+debugging  
+decision  
+digit  
+digital computer  
+disc,disk  
+display unit  
+drum  
+to edit  
+electronics  
+emitter  
+to encode  
+to erase  
+feed  
+to feed  
+feedback  
+field  
+file  
+floppy disk  
+floppy disk drive  
+flow chart  
+frame  
+hardware  
+identifier  
+index  
+information  
+inline processing  
+input  
+inquiry  
+instruction  
+integrated circuit  
+to interpret  
+item  
+jump  
+key  
+keyboard  
+latency time  
+library  
+linkage  
+to load  
+location  
+logger  
+loop  
+machine language  
+magnetic storage  
+magnetic tape  
+matrix  
+memory  
+message  
+microcomputer  
+module  
+monitor  
+nanosecond  
+network  
+numeric, numerical  
+octet  
+operator  
+optical character reader  
+optical scanner  
+output  
+overflow  
+panel  
+parameter  
+perforator  
+peripheral equipment  
+personal computer  
+printed circuit  
+printer  
+printout  
+to process  
+processing unit  
+program  
+to program  
+programmer  
+programming  
+pulse  
+punch  
+to punch  
+punched card,punch card  
+punched tape,punch tape  
+punch hole  
+random access  
+to read  
+reader  
+reading  
+real time  
+record, register  
+redundancy  
+routine  
+selector  
+sentinel  
+sequence  
+sequential  
+serial  
+shift  
+signal  
+simulation  
+simulator  
+software  
+sort  
+sorter  
+storage  
+to store  
+subroutine,subprogram  
+switch  
+symbol  
+symbolic language  
+system  
+tabulator  
+teleprinter  
+terminal  
+terminal unit  
+timer  
+time sharing  
+timing  
+track  
+transducer  
+translator  
+to update  
+Winchester disk drive  
+working storage  
+
+
+2. 返回到命令行模式，保存文件但不退出vi。注意：按下“:”键, 该符号会在输入区域的末行显示。
+   一旦缓冲区是空的，文件被关闭，可以看到一段信息，显示出文件的行数和字符数。
+3. 任意修改文件vitest的内容，然后放弃所有修改，强制退出vi。
+二. 光标移动键的使用
+
+4. 再次打开vitest文件，注意在屏幕的底部指示出该文件的名称和字符数。 
+5. 使用<h>，<j>，<k>和<l>键，练习在文件中移动光标。最简单的移动光标的方法是使用上,下,左,右键.
+6. 使用合适的光标移动命令进行如下操作：
+   向后移动一页
+   向前移动一页
+   移动光标到文件的的第一行
+   移动光标到文件的最后一行
+   移动光标到文件的第5行
+   移动光标到本行的末尾
+   移动光标到本行的开头
+7. 试着在命令行模式、文本输入模式、末行模式之间进行切换。
+
+三. 删除和粘贴
+8. 将光标移动至第5行alphanumeric处。用yy命令复制这一行内容，并粘贴到下一行。
+9.将光标移至第6行，删除这一行的内容。此时文件myfile又恢复到初始的内容，如1中显示。
+
+
+四. 字符串搜索与取代
+
+10. 设置一个文件中已经存在的字符串，比如在本文件中设置该字符串为"binary"。试着正向和反向搜索字符串binary.
+11.转入第14行。将该行中的字符串"binary"用字符串"str1"来取代。如果要用"str1"替换文件中出现的所有字符串"binary"呢？
+12.用命令u撤销11中进行的操作。
+
+
+五. 其它
+13. 移至文件的末尾。另起一行输入"the current path of file myfile is: ", 也即写入myfile所在的路径。如果忘记了myfile所在路径，
+    可在末行模式下输入 :! pwd 进行查看，然后把查看的结果插入到
+    the current path of file myfile is：
+    的后面。
+14. 在命令模式下用<Ctrl-g>查看当前文本的状态。都显示什么信息？
+15. 保存文件退出。在命令方式下可有几种方法退出vi编辑器：
+    ：wq 把编辑缓冲区的内容写到你编辑的文件中，退出编辑器，回到UNIX shell下。
+    ：ZZ 仅当作过修改时才将缓冲区内容写到文件上。
+    ：x 与 ：ZZ 相同。
+    ：q! 强行退出vi。感叹号（!）告诉vi，无条件退出，丢弃缓冲区内容。这样，先前对该文件所做的修改或输入都被抛弃。
+
+
